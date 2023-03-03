@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "kidsApp",
+    "slug": "kidsApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "kidsApp"
+}
