@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, FlatList, Animated } from "react-native";
+import { View, Text, SafeAreaView, FlatList, Animated, StyleSheet } from "react-native";
 import React, { useRef, useEffect } from "react";
 import Header from "../../Components/Header";
 import AnimalCard from "../../Components/AnimalCard";
@@ -6,11 +6,11 @@ import { animals } from "../../utils/dummyData";
 import Lottie from "lottie-react-native";
 
 const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
  
 
   const renderItem = ({ item }) => {
-    const minColorValue = 16; // adjust this value to set the minimum brightness of the color
+    const minColorValue = 19; // adjust this value to set the minimum brightness of the color
 
     let red, green, blue;
     do {
@@ -22,11 +22,11 @@ const HomeScreen = () => {
     const backgroundColor = `#${red.toString(16)}${green.toString(
       16
     )}${blue.toString(16)}`;
-    return <AnimalCard animal={item} backgroundColor={backgroundColor} />;
+    return <AnimalCard animal={item} backgroundColor={backgroundColor} navigation={navigation}/>;
   };
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
-      <Header left />
+      <Header left/>
       <View>
         <AnimatedFlatList
           scrollEventThrottle={16}
@@ -43,5 +43,14 @@ const HomeScreen = () => {
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  categoryContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
 
 export default HomeScreen;

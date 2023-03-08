@@ -5,7 +5,7 @@ export const animals = [
     id: 1,
     name: "Polar Bear",
     description: "The polar bear is a large bear native to the Arctic, and it is threatened by the loss of sea ice due to global warming.",
-    image: Images.polarBear
+    image: Images.polarBear,
   },
   {
     id: 2,

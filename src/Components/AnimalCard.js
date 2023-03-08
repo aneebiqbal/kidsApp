@@ -1,9 +1,12 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import React from "react";
 
-const AnimalCard = ({ animal, backgroundColor }) => {
+const AnimalCard = ({ animal, backgroundColor, navigation }) => {
   return (
-    <TouchableOpacity style={[styles.card, { backgroundColor: backgroundColor }]}>
+    <TouchableOpacity 
+      onPress={() => navigation.navigate('DetailsScreen', {animal, backgroundColor})}
+      style={[styles.card, { backgroundColor: backgroundColor }]}
+    >
       <View style={styles.imageContainer}>
       <Image
           source={animal.image}
